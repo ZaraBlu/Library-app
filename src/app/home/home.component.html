@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="title">
+    LIbrary
+  </h2>
+  <button class="add-button"  routerLink="/add-book">Add a Book</button>
+<div class="categories-section">
+  <h3 class="section-title">Categories</h3>
+  <ul class="categories-list">
+    <li *ngFor="let book of lastAddedBooks">
+      <a [routerLink]="['/books',book.id]">{{book.title}}</a>
+    </li>
+  </ul>
+</div>
+
+<button class="view-all-button" routerLink="/books">View All Books</button>
+</div>

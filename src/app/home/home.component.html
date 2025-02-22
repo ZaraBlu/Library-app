@@ -7,7 +7,7 @@
   <h3 class="section-title">Categories</h3>
   <ul class="categories-list">
     <li *ngFor="let book of lastAddedBooks">
-      <a [routerLink]="['/books',book.id]">{{book.title}}</a>
+      <a routerLink="/books,book.id">{{book.title}}</a>
     </li>
   </ul>
 </div>

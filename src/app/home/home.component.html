@@ -1,16 +1,22 @@
 <div class="container">
-  <h2 class="title">
-    Library
-  </h2>
-  <button class="add-button"  routerLink="/add-book">Add a Book</button>
-<div class="categories-section">
-  <h3 class="section-title">Categories</h3>
-  <ul class="categories-list">
-    <li *ngFor="let book of lastAddedBooks">
-      <a routerLink="/books,book.id">{{book.title}}</a>
-    </li>
-  </ul>
-</div>
+  <h2 class="title">Library</h2>
+  <button class="add-button" routerLink="/add-book">Add a Book</button>
+  <div class="categories-section">
+    <h3 class="section-title">Categories</h3>
+    <ul class="categories-list">
+      <li *ngFor="let category of categories">
+        <a routerLink="/books,book.id">{{ category }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="last-books-section">
+    <h3 class="section-title">Last Addedooks</h3>
+    <ul class="books-list">
+      <li *ngFor="let book of lastAddedBooks">
+        <a [routerLink]="['/books', book.id]">{{ book.title }}</a>
+      </li>
+    </ul>
+  </div>
 
-<button class="view-all-button" routerLink="/books">View All Books</button>
+  <button class="view-all-button" routerLink="/books">View All Books</button>
 </div>

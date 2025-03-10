@@ -3,17 +3,13 @@ import { Observable } from 'rxjs';
 import { Book } from './book.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
-
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BookService {
   private apiUrl = 'http://localhost:3000/books';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // Method to add a book with type annotations
   addBook(book: Book): Observable<Book> {
@@ -21,13 +17,12 @@ export class BookService {
   }
 
   //Method to get a single book by ID with type annotation
-  getBook(id: string): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/${id}`)
+  getBook(id: string | null): Observable<Book> {
+    return this.http.get<Book>(`${this.apiUrl}/${id}`);
   }
 
   //Method to get all books with type annotation
   getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.apiUrl)
+    return this.http.get<Book[]>(this.apiUrl);
   }
-
 }

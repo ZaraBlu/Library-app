@@ -13,7 +13,5 @@ export class Book {
   language?: string = '';
   publicationDate?: Date;
   onSaleDate?: Date;
-  titleInPersian?: string = ''
-
-
+  titleInPersian?: string = '';
 }
